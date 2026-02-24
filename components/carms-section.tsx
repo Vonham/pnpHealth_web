@@ -67,11 +67,11 @@ function ComparisonChart() {
           </div>
         </div>
 
-        {/* CARMS - with glow */}
+        {/* Proactive Prediction - with glow */}
         <div className="relative">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-sm font-medium text-foreground">
-              CARMS Proactive Prediction
+              Proactive Prediction
             </span>
             <span className="text-xs font-semibold text-accent">6 hours</span>
           </div>
@@ -112,7 +112,7 @@ function ComparisonChart() {
               The 6-Hour Golden Window
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              CARMS gives clinical teams up to 6 hours of advance notice,
+              Our solution gives clinical teams up to 6 hours of advance notice,
               transforming crisis response into planned intervention.
             </p>
           </div>
@@ -139,13 +139,12 @@ export function CarmsSection() {
             Core Solution
           </span>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            CARMS:{" "}
             <span className="text-accent">
               Stop Patient Crashing in Slow Motion
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground leading-relaxed">
-            Clinical Alarm & Risk Management System. A predictive safety layer
+            A predictive safety layer
             that transforms how hospitals identify and respond to patient
             deterioration.
           </p>

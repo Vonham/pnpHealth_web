@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     'clinical AI',
     'patient safety',
     'hospital technology',
-    'CARMS',
+    'predictive solution',
     'CN Engine',
   ],
 }

@@ -2,9 +2,9 @@ import { ShieldCheck, Mail, MapPin } from "lucide-react"
 
 const footerLinks = {
   Solutions: [
-    { label: "CARMS", href: "#carms" },
-    { label: "PP Cardiac", href: "#products" },
-    { label: "PP Liver", href: "#products" },
+    { label: "PNP Kardia", href: "#products" },
+    { label: "PNP Cerebro", href: "#products" },
+    { label: "PNP Hepar", href: "#products" },
     { label: "CN Engine", href: "#technology" },
   ],
   Company: [

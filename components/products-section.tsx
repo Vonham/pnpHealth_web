@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { HeartPulse, FlaskConical, ArrowUpRight } from "lucide-react"
+import { HeartPulse, Brain, FlaskConical, ArrowUpRight } from "lucide-react"
 
 function useInView(threshold = 0.2) {
   const ref = useRef<HTMLDivElement>(null)
@@ -26,10 +26,10 @@ const products = [
     icon: HeartPulse,
     badge: "Flagship",
     badgeColor: "bg-[#10b981] text-primary-foreground",
-    title: "PP Cardiac",
+    title: "PNP Kardia",
     subtitle: "Real-Time Cardiac Arrest Prediction",
     description:
-      "Industry-leading accuracy with remarkably low false-alarm rates. PP Cardiac provides real-time cardiac arrest prediction, enabling proactive care in the most critical moments.",
+      "Industry-leading accuracy with remarkably low false-alarm rates. PNP Kardia provides real-time cardiac arrest prediction, enabling proactive care in the most critical moments.",
     stats: [
       { label: "Sensitivity", value: "95.2%" },
       { label: "Specificity", value: "93.8%" },
@@ -43,10 +43,30 @@ const products = [
     ],
   },
   {
+    icon: Brain,
+    badge: "In Pipeline",
+    badgeColor: "bg-accent text-accent-foreground",
+    title: "PNP Cerebro",
+    subtitle: "Neurological Event Prediction",
+    description:
+      "Leveraging the CN Engine to predict critical neurological events from standard clinical data. Designed for neurology and neurocritical care units to enable early intervention.",
+    stats: [
+      { label: "Data Points", value: "180+" },
+      { label: "Model Type", value: "CN Engine" },
+      { label: "Target", value: "2026" },
+    ],
+    status: "Research Phase",
+    statusColor: "text-accent",
+    statusBadges: [
+      { label: "Research Phase", color: "bg-accent/10 text-accent border-accent/20" },
+      { label: "Neuro ICU", color: "bg-primary/10 text-primary border-primary/20" },
+    ],
+  },
+  {
     icon: FlaskConical,
     badge: "In Pipeline",
     badgeColor: "bg-accent text-accent-foreground",
-    title: "PP Liver",
+    title: "PNP Hepar",
     subtitle: "Complex Liver Disease Progression",
     description:
       "Utilizing the CN Engine to predict complex liver disease progression from standard clinical data. Designed for high-acuity hepatology and transplant programs.",
@@ -81,7 +101,7 @@ export function ProductsSection() {
             Product Roadmap
           </span>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            The PP Series:{" "}
+            The PNP Series:{" "}
             <span className="text-primary">
               Excellence in High-Acuity AI
             </span>
@@ -93,7 +113,7 @@ export function ProductsSection() {
         </div>
 
         {/* Product Cards */}
-        <div className="mt-12 grid gap-6 sm:mt-16 sm:gap-8 md:grid-cols-2">
+        <div className="mt-12 grid gap-6 sm:mt-16 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product, i) => {
             const Icon = product.icon
             return (

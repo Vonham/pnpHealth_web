@@ -44,7 +44,7 @@ const partners = [
     fullName: "University of Georgia",
     role: "US Clinical Validation Partner",
     description:
-      "Leading US-based clinical validation studies to ensure CARMS meets the rigorous standards of American healthcare institutions.",
+      "Leading US-based clinical validation studies to ensure our solution meets the rigorous standards of American healthcare institutions.",
   },
   {
     icon: Cpu,

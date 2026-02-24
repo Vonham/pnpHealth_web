@@ -33,7 +33,7 @@ const leaders = [
     name: "Nicola Zetola",
     role: "Chief Medical Officer",
     initials: "NZ",
-    bio: "Board-certified physician with deep expertise in infectious disease and global health. Ensures CARMS meets the highest clinical standards for patient safety.",
+    bio: "Board-certified physician with deep expertise in infectious disease and global health. Ensures our solution meets the highest clinical standards for patient safety.",
     color: "bg-accent",
   },
   {

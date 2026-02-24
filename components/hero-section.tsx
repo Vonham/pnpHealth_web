@@ -112,7 +112,7 @@ function PredictiveDashboard() {
       ctx.fillStyle = "#0056B3"
       ctx.fill()
 
-      // CARMS Score badge
+      // Risk Score badge
       const scoreX = w * 0.7
       const scoreY = h * 0.2
       ctx.fillStyle = "rgba(0, 45, 98, 0.9)"
@@ -121,7 +121,7 @@ function PredictiveDashboard() {
       ctx.fill()
       ctx.fillStyle = "#ffffff"
       ctx.font = "bold 11px Inter, sans-serif"
-      ctx.fillText("CARMS Score", scoreX + 10, scoreY + 16)
+      ctx.fillText("Risk Score", scoreX + 10, scoreY + 16)
       ctx.font = "bold 16px Inter, sans-serif"
       ctx.fillStyle = "#38bdf8"
       ctx.fillText("78 / 100", scoreX + 10, scoreY + 34)
@@ -214,7 +214,7 @@ export function HeroSection() {
               className="bg-[#38bdf8] text-primary hover:bg-[#38bdf8]/90 font-semibold"
             >
               <a href="#carms">
-                Explore CARMS <ArrowRight className="ml-2 h-4 w-4" />
+                Explore Solution <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
             <Button

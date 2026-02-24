@@ -101,7 +101,7 @@ export function TechnologySection() {
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground leading-relaxed">
-            Our proprietary engine powers every PP Series model, combining
+            Our proprietary engine powers every PNP Series model, combining
             clinical rigor with cutting-edge machine learning.
           </p>
         </div>
