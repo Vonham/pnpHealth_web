@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     'predictive solution',
     'CN Engine',
   ],
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      // favicon.ico가 있다면 여기에 추가: { url: '/favicon.ico' },
+    ],
+  },
 }
 
 export default function RootLayout({
