@@ -1,5 +1,6 @@
 import { Mail, MapPin } from "lucide-react"
 import Image from "next/image"
+import { getBasePath } from "@/lib/utils"
 
 const footerLinks = {
   Solutions: [
@@ -30,9 +31,9 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#" className="flex items-center gap-2.5">
-              <Image 
-                src="/pnp-logo.png" 
-                alt="PnP Health Logo" 
+              <Image
+                src={`${getBasePath()}/pnp-logo.png`}
+                alt="PnP Health Logo"
                 width={120} 
                 height={40} 
                 className="h-10 w-auto rounded-sm"

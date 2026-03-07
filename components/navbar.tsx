@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { getBasePath } from "@/lib/utils"
 
 const navLinks = [
   { href: "#carms", label: "Solution" },
@@ -35,9 +36,9 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5">
-          <Image 
-            src="/pnp-logo.png" 
-            alt="PnP Health Logo" 
+          <Image
+            src={`${getBasePath()}/pnp-logo.png`}
+            alt="PnP Health Logo"
             width={120} 
             height={40} 
             className="h-10 w-auto transition-all duration-300 rounded-sm"
