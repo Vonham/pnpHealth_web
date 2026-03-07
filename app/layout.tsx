@@ -33,8 +33,7 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      // favicon.ico가 있다면 여기에 추가: { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
     ],
   },
 }
