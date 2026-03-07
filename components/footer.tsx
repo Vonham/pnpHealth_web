@@ -1,10 +1,11 @@
-import { ShieldCheck, Mail, MapPin } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
+import Image from "next/image"
 
 const footerLinks = {
   Solutions: [
-    { label: "PNP Kardia", href: "#products" },
-    { label: "PNP Cerebro", href: "#products" },
-    { label: "PNP Hepar", href: "#products" },
+    { label: "PnP Kardia", href: "#products" },
+    { label: "PnP Cerebro", href: "#products" },
+    { label: "PnP Hepar", href: "#products" },
     { label: "CN Engine", href: "#technology" },
   ],
   Company: [
@@ -29,12 +30,16 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#" className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-foreground/10">
-                <ShieldCheck className="h-5 w-5 text-primary-foreground" />
-              </div>
+              <Image 
+                src="/pnp-logo.png" 
+                alt="PnP Health Logo" 
+                width={120} 
+                height={40} 
+                className="h-10 w-auto rounded-sm"
+              />
               <div className="flex flex-col">
                 <span className="text-lg font-bold leading-none">
-                  PNP Health
+                  PnP Health Inc.
                 </span>
                 <span className="text-[10px] uppercase tracking-widest text-primary-foreground/50 leading-none mt-0.5">
                   Prevention by Prediction
@@ -84,7 +89,7 @@ export function Footer() {
         <div className="mt-16 border-t border-primary-foreground/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-xs text-primary-foreground/40">
-              &copy; {new Date().getFullYear()} PNP Health Inc. All rights
+              &copy; {new Date().getFullYear()} PnP Health Inc. All rights
               reserved. Delaware C-Corp.
             </p>
             <div className="flex items-center gap-6">

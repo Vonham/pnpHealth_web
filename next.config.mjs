@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   output: 'export',
-  basePath: '/pnpHealth_web', // GitHub Pages 레포지토리 이름
+  basePath: isProd ? '/pnpHealth_web' : '', // 배포 때만 적용
   typescript: {
     ignoreBuildErrors: true,
   },

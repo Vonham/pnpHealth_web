@@ -26,10 +26,10 @@ const products = [
     icon: HeartPulse,
     badge: "Flagship",
     badgeColor: "bg-[#10b981] text-primary-foreground",
-    title: "PNP Kardia",
+    title: "PnP Kardia",
     subtitle: "Real-Time Cardiac Arrest Prediction",
     description:
-      "Industry-leading accuracy with remarkably low false-alarm rates. PNP Kardia provides real-time cardiac arrest prediction, enabling proactive care in the most critical moments.",
+      "Industry-leading accuracy with remarkably low false-alarm rates. PnP Kardia provides real-time cardiac arrest prediction, enabling proactive care in the most critical moments.",
     stats: [
       { label: "Sensitivity", value: "95.2%" },
       { label: "Specificity", value: "93.8%" },
@@ -46,7 +46,7 @@ const products = [
     icon: Brain,
     badge: "In Pipeline",
     badgeColor: "bg-accent text-accent-foreground",
-    title: "PNP Cerebro",
+    title: "PnP Cerebro",
     subtitle: "Neurological Event Prediction",
     description:
       "Leveraging the CN Engine to predict critical neurological events from standard clinical data. Designed for neurology and neurocritical care units to enable early intervention.",
@@ -66,7 +66,7 @@ const products = [
     icon: FlaskConical,
     badge: "In Pipeline",
     badgeColor: "bg-accent text-accent-foreground",
-    title: "PNP Hepar",
+    title: "PnP Hepar",
     subtitle: "Complex Liver Disease Progression",
     description:
       "Utilizing the CN Engine to predict complex liver disease progression from standard clinical data. Designed for high-acuity hepatology and transplant programs.",
@@ -101,7 +101,7 @@ export function ProductsSection() {
             Product Roadmap
           </span>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            The PNP Series:{" "}
+            The PnP Series:{" "}
             <span className="text-primary">
               Excellence in High-Acuity AI
             </span>

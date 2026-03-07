@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, ShieldCheck } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
@@ -34,12 +35,16 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5">
-          <div className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-300 ${scrolled ? "bg-primary" : "bg-primary-foreground/15"}`}>
-            <ShieldCheck className={`h-5 w-5 transition-colors duration-300 ${scrolled ? "text-primary-foreground" : "text-primary-foreground"}`} />
-          </div>
+          <Image 
+            src="/pnp-logo.png" 
+            alt="PnP Health Logo" 
+            width={120} 
+            height={40} 
+            className="h-10 w-auto transition-all duration-300 rounded-sm"
+          />
           <div className="flex flex-col">
             <span className={`text-lg font-bold tracking-tight leading-none transition-colors duration-300 ${scrolled ? "text-primary" : "text-primary-foreground"}`}>
-              PNP Health
+              PnP Health Inc.
             </span>
             <span className={`text-[10px] uppercase tracking-widest leading-none mt-0.5 transition-colors duration-300 ${scrolled ? "text-muted-foreground" : "text-primary-foreground/60"}`}>
               Prevention by Prediction

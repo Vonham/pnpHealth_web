@@ -96,7 +96,7 @@ export function LeadershipSection() {
               </p>
 
               {/* Social links */}
-              <div className="mt-6 flex items-center justify-center gap-3">
+              {/* <div className="mt-6 flex items-center justify-center gap-3">
                 <button
                   aria-label={`LinkedIn profile of ${leader.name}`}
                   className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
@@ -109,7 +109,7 @@ export function LeadershipSection() {
                 >
                   <Mail className="h-4 w-4" />
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

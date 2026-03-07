@@ -67,15 +67,41 @@ function PredictiveDashboard() {
       ctx.strokeStyle = "#0056B3"
       ctx.lineWidth = 2.5
       ctx.setLineDash([6, 4])
-      const predStart = w * 0.55
+      
+      // Start slightly before the green line ends to ensure connection
+      // Green line ends at w * 0.6
+      // Let's start the blue line at w * 0.6 exactly, matching the green line's y position
+      const predStart = w * 0.6
+      
+      // Calculate the exact end Y of the green line to start the blue line there
+      const startY = h * 0.55 + Math.sin(predStart * 0.02 + frame * 0.02) * 8
+      
+      ctx.moveTo(predStart, startY)
+
       for (let x = predStart; x < w * 0.95; x += 2) {
-        const progress = (x - predStart) / (w * 0.4)
+        const progress = (x - predStart) / (w * 0.35) // Adjusted width divisor
+        
+        // Base curve (quadratic)
+        const curveY = h * 0.55 - progress * progress * h * 0.3
+        
+        // Sine wave offset (matching frequency/amplitude of green line initially)
+        // We blend from the green line's wave (sin 0.02, amp 8) to the blue line's wave (sin 0.03, amp 4)
+        // actually, let's keep it simple and just offset the blue curve to match startY
+        
+        // The original blue curve formula was:
+        // y = h * 0.55 - progress^2 * h * 0.3 + sin(x*0.03 + f*0.03) * 4
+        
+        // We want y at x=predStart (progress=0) to be startY.
+        // At progress=0, original formula gives: h*0.55 + sin(...) * 4
+        // We need it to be: h*0.55 + sin(...) * 8  (from green line)
+        
+        // To make it smooth, let's use the green line's sine wave but add the rising trend
         const y =
-          h * 0.55 -
-          progress * progress * h * 0.3 +
-          Math.sin(x * 0.03 + frame * 0.03) * 4
-        if (x === predStart) ctx.moveTo(x, y)
-        else ctx.lineTo(x, y)
+          h * 0.55 +
+          Math.sin(x * 0.02 + frame * 0.02) * 8 - // Match green line oscillation
+          progress * progress * h * 0.3 // Add rising risk trend
+
+        ctx.lineTo(x, y)
       }
       ctx.stroke()
       ctx.setLineDash([])
@@ -99,9 +125,13 @@ function PredictiveDashboard() {
 
       // Prediction alert dot
       const alertX = w * 0.88
+      // Calculate alertY using the same formula as the blue line
+      const alertProgress = (alertX - predStart) / (w * 0.35)
       const alertY =
-        h * 0.55 -
-        Math.pow((alertX - predStart) / (w * 0.4), 2) * h * 0.3
+        h * 0.55 +
+        Math.sin(alertX * 0.02 + frame * 0.02) * 8 -
+        alertProgress * alertProgress * h * 0.3
+      
       const pulse = Math.sin(frame * 0.06) * 0.3 + 0.7
       ctx.beginPath()
       ctx.arc(alertX, alertY, 8 * pulse, 0, Math.PI * 2)
@@ -112,12 +142,16 @@ function PredictiveDashboard() {
       ctx.fillStyle = "#0056B3"
       ctx.fill()
 
-      // Risk Score badge
-      const scoreX = w * 0.7
-      const scoreY = h * 0.2
+      // Risk Score badge - Position relative to the alert dot
+      // Position it to the left and slightly above the dot to avoid overlapping
+      const scoreWidth = 100
+      const scoreHeight = 40
+      const scoreX = alertX - scoreWidth - 15 // 15px gap to the left of dot
+      const scoreY = alertY - scoreHeight / 2 // Centered vertically with dot
+      
       ctx.fillStyle = "rgba(0, 45, 98, 0.9)"
       ctx.beginPath()
-      ctx.roundRect(scoreX, scoreY, 100, 40, 8)
+      ctx.roundRect(scoreX, scoreY, scoreWidth, scoreHeight, 8)
       ctx.fill()
       ctx.fillStyle = "#ffffff"
       ctx.font = "bold 11px Inter, sans-serif"

@@ -21,7 +21,11 @@ function useInView(threshold = 0.2) {
   return { ref, inView }
 }
 
-function AnimatedCounter({ target, suffix = "", inView }: { target: number; suffix?: string; inView: boolean }) {
+function AnimatedCounter({ target, suffix = "", inView }: { target: number | string; suffix?: string; inView: boolean }) {
+  const numericTarget = typeof target === "number" ? target : parseFloat(target.replace(/[^0-9.]/g, "")) || 0
+  const prefix = typeof target === "string" ? target.replace(/[0-9.]/g, "").trim() : ""
+  const isDecimal = typeof target === "number" ? !Number.isInteger(target) : target.includes(".")
+  
   const [count, setCount] = useState(0)
   const hasAnimated = useRef(false)
 
@@ -35,21 +39,23 @@ function AnimatedCounter({ target, suffix = "", inView }: { target: number; suff
       const elapsed = Date.now() - startTime
       const progress = Math.min(elapsed / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.floor(eased * target))
+      setCount(eased * numericTarget)
       if (progress < 1) requestAnimationFrame(step)
-      else setCount(target)
+      else setCount(numericTarget)
     }
 
     requestAnimationFrame(step)
-  }, [target])
+  }, [numericTarget])
 
   useEffect(() => {
     if (inView) animate()
   }, [inView, animate])
 
+  const displayValue = isDecimal ? count.toFixed(1) : Math.floor(count).toLocaleString()
+
   return (
     <span>
-      {count.toLocaleString()}{suffix}
+      {prefix && `${prefix} `}{displayValue}{suffix}
     </span>
   )
 }
@@ -101,7 +107,7 @@ export function TechnologySection() {
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground leading-relaxed">
-            Our proprietary engine powers every PNP Series model, combining
+            Our proprietary engine powers every PnP Series model, combining
             clinical rigor with cutting-edge machine learning.
           </p>
         </div>
@@ -110,8 +116,8 @@ export function TechnologySection() {
         <div className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-8 rounded-2xl border border-border bg-card p-6 shadow-sm sm:gap-12">
           {[
             { value: 10, suffix: "M+", label: "Clinical Records" },
-            { value: 95, suffix: "%", label: "Sensitivity" },
-            { value: 6, suffix: "hr", label: "Lead Time" },
+            { value: 91.3, suffix: "%", label: "Prediction Accuracy" },
+            { value: "Up to 6", suffix: "hours", label: "Advanced Warning" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl font-bold text-accent sm:text-4xl">
