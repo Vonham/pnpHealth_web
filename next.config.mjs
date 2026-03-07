@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? '/pnpHealth_web' : '', // 배포 때만 적용
+  // 커스텀 도메인(루트 경로) 사용을 위해 basePath 제거
+  basePath: '', 
   typescript: {
     ignoreBuildErrors: true,
   },

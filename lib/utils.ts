@@ -6,6 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getBasePath() {
-  const isProd = process.env.NODE_ENV === "production"
-  return isProd ? "/pnpHealth_web" : ""
+  // 커스텀 도메인(루트 경로) 사용을 위해 basePath 제거
+  return ""
 }
