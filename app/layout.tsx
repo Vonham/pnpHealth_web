@@ -47,6 +47,28 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${dmSans.variable}`}>
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'PnP Health Inc.',
+              url: 'https://www.pnphealth.ai',
+              logo: 'https://www.pnphealth.ai/icon.png',
+              description: 'Predictive safety infrastructure for hospitals, powered by our proprietary CN Engine.',
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'USA',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: 'info@pnphealth.ai',
+                contactType: 'customer support',
+              },
+            }),
+          }}
+        />
         {children}
         <Analytics />
       </body>
