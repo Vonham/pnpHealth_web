@@ -1,13 +1,11 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.pnphealth.com'
-  
   return [
     {
-      url: baseUrl,
+      url: 'https://www.pnphealth.ai',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'yearly',
       priority: 1,
     },
   ]
