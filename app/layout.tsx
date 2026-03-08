@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.pnphealth.com'),
+  metadataBase: new URL('https://www.pnphealth.ai'),
   title: 'PnP Health Inc. | Prevention by Prediction',
   description:
     'US Clinical Leadership meets Korean Big Data Excellence. Predictive safety infrastructure for hospitals, powered by our proprietary CN Engine.',
